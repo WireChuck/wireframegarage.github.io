@@ -22,7 +22,7 @@
     },
     {
       "name": "Center Vent Louver Set",
-      "hidden": false,
+      "hidden": true,
       "category": "Interior",
       "fitment": "1982–1989",
       "description": "Replacement louvers for the center dash vents. The originals get brittle with age and snap — these clip straight in.",
