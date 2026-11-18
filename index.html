@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wireframe Garage — 3D-printed parts &amp; model files</title>
+  <meta name="description" content="3D-printed parts and printable model files for the Mitsubishi Starquest.">
+  <meta name="theme-color" content="#111214">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">
+        <img class="brand-logo" src="images/logo.webp" width="400" height="159" alt="">
+        <span data-shop-name>Wireframe Garage</span>
+      </a>
+      <div class="header-actions">
+        <nav id="site-nav" class="site-nav">
+          <a href="#shop">Shop</a>
+          <a href="#how">How it works</a>
+          <a href="#custom">Custom parts</a>
+          <a id="nav-help" href="#help">FAQ</a>
+        </nav>
+        <button id="cart-button" class="header-btn" type="button" aria-controls="cart">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg>
+          <span class="cart-label">Cart</span>
+          <span id="cart-count" class="cart-count" hidden>0</span>
+        </button>
+        <button class="header-btn menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="hero-banner">
+      <img src="images/hero-banner.webp" width="2000" height="1125" fetchpriority="high"
+        alt="Mitsubishi Starquest, half wireframe 3D model and half real car, on a neon grid at sunset">
+    </div>
+
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <p class="eyebrow">Mitsubishi Starion / Chrysler Conquest · 1982–1990</p>
+          <h1>Hard-to-find Starquest parts, printed or ready to print.</h1>
+          <p class="lede">Download the model files and print them yourself, or order finished parts printed in high-grade materials built to last. Replacement stickers too.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#shop">Browse parts</a>
+            <a class="btn btn-ghost" href="#custom">Request a part</a>
+          </div>
+        </div>
+        <ul class="hero-points">
+          <li><strong>Model files</strong><span>STL and STEP, emailed after purchase</span></li>
+          <li><strong>Printed parts</strong><span>High-grade materials built to last</span></li>
+          <li><strong>Made to order</strong><span data-ship-time>Ships in 3–5 business days</span></li>
+          <li><strong>Easy checkout</strong><span>Pay by card or PayPal</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="trust">
+      <div class="container">
+        <div class="card trust">
+          <span class="tag">A note on the files</span>
+          <h2 class="trust-title">
+            <svg class="warn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20.5h20z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 9.5v5" stroke="#111214" stroke-width="2.4" stroke-linecap="round"/><circle cx="12" cy="17.6" r="1.3" fill="#111214"/></svg>
+            Built on trust
+            <svg class="warn-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20.5h20z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 9.5v5" stroke="#111214" stroke-width="2.4" stroke-linecap="round"/><circle cx="12" cy="17.6" r="1.3" fill="#111214"/></svg>
+          </h2>
+          <p>The model files here are sold on trust. I spend a painful amount of time designing them, and I share them with the community to make it easier for other owners to keep their Starquests on the road. These cars need the love.</p>
+          <p>If you buy a file, out of respect please <strong>keep the files, and anything you print from them, to yourself</strong>. Don't share, upload or resell them.</p>
+          <p class="trust-sign">Thanks for keeping it fair. — <span data-shop-name>Wireframe Garage</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="shop" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Parts, files &amp; stickers</h2>
+          <p id="result-count" class="muted"></p>
+        </div>
+
+        <div class="toolbar">
+          <div class="segmented" role="group" aria-label="Product type">
+            <button type="button" data-type="all" aria-pressed="true">All</button>
+            <button type="button" data-type="file" aria-pressed="false">Model files</button>
+            <button type="button" data-type="printed" aria-pressed="false">Printed parts</button>
+            <button type="button" data-type="sticker" aria-pressed="false">Stickers</button>
+          </div>
+          <div class="toolbar-right">
+            <select id="category" aria-label="Category">
+              <option value="all">All categories</option>
+            </select>
+            <input id="search" type="search" placeholder="Search parts" aria-label="Search parts">
+          </div>
+        </div>
+
+        <div id="grid" class="grid"></div>
+        <p id="empty" class="empty" hidden>Nothing matches that. Try another filter, or <a href="#custom">ask for a custom part</a>.</p>
+      </div>
+    </section>
+
+    <section id="how" class="section section-alt">
+      <div class="container">
+        <h2>How it works</h2>
+        <div class="steps">
+          <article class="step">
+            <span class="tag">Model files</span>
+            <h3>Print it yourself</h3>
+            <p>Buy the file and we'll email it to you to print on your own machine. Every file comes with recommended material, orientation and settings.</p>
+          </article>
+          <article class="step">
+            <span class="tag">Printed parts</span>
+            <h3>We print and ship it</h3>
+            <p>Parts are printed to order in high-grade materials built to last, whether they go inside the car, out in the sun or near engine heat. Most orders ship within a week.</p>
+          </article>
+          <article class="step">
+            <span class="tag">Fitment</span>
+            <h3>Check before you buy</h3>
+            <p>Each listing shows the years and models it was designed for. Not sure it fits your car? Send a photo and we'll check.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="custom" class="section">
+      <div class="container custom-inner">
+        <div>
+          <h2>Need something that isn't listed?</h2>
+          <p class="muted">Broken clip, cracked bezel, a trim piece nobody makes anymore — send photos or measurements and we'll quote a custom part or model file.</p>
+          <ul class="checklist">
+            <li>Photos of the part and where it mounts</li>
+            <li>Rough measurements, if you have them</li>
+            <li>Year and model of your car</li>
+          </ul>
+        </div>
+
+        <form id="contact-form" class="card form">
+          <label>Name
+            <input name="name" required autocomplete="name">
+          </label>
+          <label>Email
+            <input name="email" type="email" required autocomplete="email">
+          </label>
+          <label>Subject
+            <input id="subject" name="subject" placeholder="e.g. Rear hatch trim clip">
+          </label>
+          <label>Details
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Send request</button>
+          <p id="form-status" class="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Filled in from data/help.json -->
+    <section id="help" class="section section-alt">
+      <div class="container">
+        <h2>FAQ &amp; policies</h2>
+        <div class="help-grid">
+          <div id="faq-group">
+            <h3 class="help-title">Questions</h3>
+            <div id="faq-list" class="qa-list"></div>
+          </div>
+          <div id="policy-group">
+            <h3 class="help-title">Policies</h3>
+            <div id="policy-list" class="qa-list"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> <span data-shop-name>Wireframe Garage</span> · <a id="footer-email" href="#"></a></p>
+      <nav id="footer-links" class="footer-links" aria-label="Help and policies"></nav>
+      <p class="muted footer-note">Independent shop. Not affiliated with or endorsed by Mitsubishi Motors.</p>
+    </div>
+  </footer>
+
+  <dialog id="product-dialog" class="dialog" aria-labelledby="dialog-title">
+    <div id="dialog-body"></div>
+  </dialog>
+
+  <div id="cart-backdrop" class="backdrop" hidden></div>
+  <aside id="cart" class="drawer" role="dialog" aria-labelledby="cart-title" hidden>
+    <div class="drawer-head">
+      <h2 id="cart-title">Your cart</h2>
+      <button id="cart-close" class="icon-btn" type="button" aria-label="Close cart">×</button>
+    </div>
+    <div id="cart-body" class="drawer-body"></div>
+    <div id="cart-foot" class="drawer-foot" hidden>
+      <dl class="totals">
+        <div><dt>Subtotal</dt><dd id="cart-subtotal"></dd></div>
+        <div><dt>Shipping</dt><dd id="cart-shipping"></dd></div>
+        <div class="totals-total"><dt>Total</dt><dd id="cart-total"></dd></div>
+      </dl>
+      <div id="checkout"></div>
+      <p id="checkout-note" class="checkout-note" role="status"></p>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>

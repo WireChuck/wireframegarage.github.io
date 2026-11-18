@@ -1,0 +1,9 @@
+{
+  "name": "Wireframe Garage",
+  "email": "hello@example.com",
+  "shipTime": "ships in 3–5 business days",
+  "shippingCost": 8,
+  "currency": "USD",
+  "paypalClientId": "",
+  "formEndpoint": ""
+}

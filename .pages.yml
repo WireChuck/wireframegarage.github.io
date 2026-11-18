@@ -1,0 +1,182 @@
+# Settings for the online editor (Pages CMS, app.pagescms.org).
+# This file tells the editor which files you can change and what the forms
+# look like. You don't need to touch it, except to add a new category
+# (see "category" below).
+
+media:
+  input: images/products
+  output: /images/products
+  rename: safe
+  categories: [image]
+
+content:
+  # ── Products ──────────────────────────────────────────────
+  - name: products
+    label: Products
+    type: file
+    path: data/products.json
+    format: json
+    fields:
+      - name: products
+        label: Products
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        fields:
+          - name: name
+            label: Product name
+            type: string
+            required: true
+            description: "Also used for the product's link, e.g. Door Lock Knobs → ?part=door-lock-knobs"
+          - name: hidden
+            label: Hide from the shop
+            type: boolean
+            description: "Tick to take it off the site without deleting it."
+          - name: category
+            label: Category
+            type: select
+            # To add a category, add it to this list (edit .pages.yml on GitHub).
+            options:
+              values: [Interior, Exterior, Engine bay, Electrical, Display, Decals]
+          - name: fitment
+            label: Fits
+            type: string
+            description: "Years and models it fits, e.g. All years · LHD"
+          - name: description
+            label: Description
+            type: text
+          - name: notes
+            label: Bullet points
+            type: string
+            list: true
+          - name: photos
+            label: Photos
+            type: image
+            description: "The first photo shows on the shop card. Landscape (4:3) photos look best."
+            options:
+              multiple:
+                max: 8
+          - name: file
+            label: Sell as a model file
+            type: object
+            description: "Leave the price empty if you don't sell the file."
+            fields:
+              - name: price
+                label: Price
+                type: number
+                options:
+                  min: 0
+              - name: formats
+                label: File formats
+                type: string
+                description: "e.g. STL, STEP"
+          - name: printed
+            label: Sell as a printed part
+            type: object
+            description: "Leave the price empty if you don't sell it printed."
+            fields:
+              - name: price
+                label: Price
+                type: number
+                options:
+                  min: 0
+              - name: material
+                label: Material and color
+                type: string
+                description: "e.g. High-grade material built to last, matte black"
+          - name: sticker
+            label: Sell as a sticker
+            type: object
+            description: "Leave the price empty if it isn't a sticker."
+            fields:
+              - name: price
+                label: Price
+                type: number
+                options:
+                  min: 0
+              - name: details
+                label: Size and material
+                type: string
+                description: "e.g. Weatherproof vinyl, about 5 in wide"
+
+  # ── FAQ & policies ────────────────────────────────────────
+  - name: help
+    label: FAQ & policies
+    type: file
+    path: data/help.json
+    format: json
+    fields:
+      - name: faq
+        label: Questions
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{question}"
+        fields:
+          - name: question
+            label: Question
+            type: string
+            required: true
+          - name: answer
+            label: Answer
+            type: text
+            description: "Blank line = new paragraph. Start a line with - for a bullet point. {email}, {shipping} and {shipTime} fill in from Shop settings."
+      - name: policies
+        label: Policies
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        fields:
+          - name: title
+            label: Title
+            type: string
+            required: true
+            description: "Each policy also gets a link in the page footer."
+          - name: body
+            label: Text
+            type: text
+            description: "Blank line = new paragraph. Start a line with - for a bullet point. {email}, {shipping} and {shipTime} fill in from Shop settings."
+
+  # ── Shop settings ─────────────────────────────────────────
+  - name: shop
+    label: Shop settings
+    type: file
+    path: data/shop.json
+    format: json
+    fields:
+      - name: name
+        label: Shop name
+        type: string
+        required: true
+      - name: email
+        label: Email
+        type: string
+        description: "Shown in the footer. Order requests and the contact form go here."
+      - name: shipTime
+        label: Shipping time
+        type: string
+        description: "Fits into sentences like \"Each order ships in 3–5 business days\", so start with \"ships in\"."
+      - name: shippingCost
+        label: Shipping cost
+        type: number
+        description: "Flat shipping, added once to any order with printed parts or stickers. 0 = free."
+        options:
+          min: 0
+      - name: currency
+        label: Currency
+        type: select
+        options:
+          values: [USD, CAD, EUR, GBP, AUD]
+      - name: paypalClientId
+        label: PayPal Client ID
+        type: string
+        description: "From developer.paypal.com → Apps & Credentials. Never paste the Secret here. Leave empty and the cart sends you an order request by email instead."
+      - name: formEndpoint
+        label: Contact form address (optional)
+        type: string
+        description: "A Formspree (or similar) URL so the contact form sends directly. Leave empty and it opens the visitor's email app."

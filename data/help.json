@@ -1,0 +1,46 @@
+{
+  "faq": [
+    {
+      "question": "Will this fit my car?",
+      "answer": "Each listing shows the years and models it was made for. The car was sold by Mitsubishi and by Chrysler, Dodge and Plymouth, and most parts fit every version. Narrowbody and widebody cars differ in a few body parts, so check the fitment line.\n\nNot sure? Send a photo through the custom parts form and we'll check."
+    },
+    {
+      "question": "How do I get my model files?",
+      "answer": "After you pay, we email the files to the address on your order, usually within a day. If they haven't arrived, check your spam folder, then email {email}."
+    },
+    {
+      "question": "What should I print the files in?",
+      "answer": "Every file comes with the material, print orientation and settings we recommend. Parts that sit near engine heat or out in the sun need a heat- or UV-resistant material, and the notes say so."
+    },
+    {
+      "question": "Can I sell parts printed from your files?",
+      "answer": "No. The files are for your own cars. Print as many as you need, but please don't sell the prints or share the files. See the file license below."
+    },
+    {
+      "question": "How long does shipping take?",
+      "answer": "Printed parts and stickers are made to order, and each order {shipTime}. Shipping is a flat {shipping} per order, and we email tracking once it's on the way."
+    },
+    {
+      "question": "Can you make a part that isn't listed?",
+      "answer": "Often, yes. Send photos and rough measurements through the custom parts form and we'll quote a printed part or a model file."
+    }
+  ],
+  "policies": [
+    {
+      "title": "Shipping",
+      "body": "Printed parts and stickers are made to order, and each order {shipTime}. Shipping is a flat {shipping} per order, however many items are in it. Model files are emailed, so they have no shipping.\n\nWe currently ship within the US. For anywhere else, email {email} before ordering and we'll work out a price."
+    },
+    {
+      "title": "Returns & refunds",
+      "body": "Model files are digital, so they can't be returned once they've been sent. If a file is broken or isn't what the listing describes, email us and we'll fix it or refund you.\n\nIf a printed part or sticker arrives damaged, or doesn't fit a car the listing says it fits, email {email} within 30 days with a photo. We'll send a replacement or refund you."
+    },
+    {
+      "title": "File license",
+      "body": "When you buy a model file, you can:\n- print it as many times as you like for your own cars\n- change it to suit your own car\n\nYou can't:\n- share, upload or resell the file, or a changed version of it\n- sell parts printed from it\n\nThe designs take a lot of work, so thanks for respecting this."
+    },
+    {
+      "title": "Privacy",
+      "body": "We only use your name, email and address to fill your order and reply to you. Payments are handled by PayPal, so we never see your card details. Your cart is saved in your own browser, and the site has no ad trackers."
+    }
+  ]
+}
