@@ -41,7 +41,7 @@
     },
     {
       "name": "Door Lock Knobs (pair)",
-      "hidden": false,
+      "hidden": true,
       "category": "Interior",
       "fitment": "All years",
       "description": "Simple, clean replacements for cracked or missing door lock knobs.",
